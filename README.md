@@ -37,4 +37,4 @@ Prometheus 的 Targets 界面看见抓取到了对应应用的 endpoint，则表
 
 ## License
 
-[MIT © Shenmiu.](../LICENSE.md)
+[MIT © Shenmiu.](LICENSE)
