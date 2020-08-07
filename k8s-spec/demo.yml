@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: prometheus-test-demo-shenmiu
+  name: prometheus-test-demo-shenmiu
+  namespace: cn202009
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus-test-demo-shenmiu
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scheme: http
+        prometheus.io/scrape: "true"
+      labels:
+        app: prometheus-test-demo-shenmiu
+    spec:
+      containers:
+        - image: harbor.edu.cn/library/k8s-prometheus-demo:1.0
+          name: prometheus-test-demo-shenmiu
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-test-demo-shenmiu
+  labels:
+    app: prometheus-test-demo-shenmiu
+spec:
+  type: NodePort
+  selector:
+    app: prometheus-test-demo-shenmiu
+  ports:
+    - name: tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
