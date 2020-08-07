@@ -1,5 +1,8 @@
 # Monitoring apps using prometheus operator
 
+[![license](https://img.shields.io/github/license/Shenmiu/k8s-prometheus-demo.svg)](LICENSE)
+
+
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 这个 demo 包含了 app 的源文件、Dockerfile 以及 k8s 的 spec
@@ -30,3 +33,8 @@ $ kubect apply service_monitor.yml
 Prometheus 的 Targets 界面看见抓取到了对应应用的 endpoint，则表示配置成功
 
 <img src="https://shenmiu.oss-cn-hangzhou.aliyuncs.com/uPic/2020-08-08-mdfpMu.png" style="zoom:30%">
+
+
+## License
+
+[MIT © Shenmiu.](../LICENSE.md)
